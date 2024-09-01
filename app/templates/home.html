@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h2>Добро пожаловать на домашнюю страницу,
+        {% if current_user.is_authenticated %}
+            {{current_user.username}} !
+        {% else%}
+        дорогой гость !
+        {% endif %}
+    </h2>
+    <p class="lead">Это простая система аутентификации построенная на Flask</p>
+{% endblock %}
